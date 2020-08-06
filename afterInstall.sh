@@ -9,6 +9,9 @@ sudo apt-get autoremove
 # terminal everywhere
 sudo apt-get install nautilus-open-terminal
 
+# c++11
+sudo apt-get install gcc g++
+
 # time locally
 timedatectl set-local-rtc 1
 
@@ -21,4 +24,4 @@ sudo apt-get install vim
 wget -qO- https://raw.github.com/ma6174/vim/master/setup.sh | sh -x
 
 # vscode install
-sudo snap install --classic vscode
+sudo snap install --classic code
