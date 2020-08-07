@@ -63,6 +63,19 @@ sudo apt-get install libglib2.0-dev openjdk-8-jdk
 make
 sudo make install
 
+# pcl
+# git clone https://github.com/PointCloudLibrary/pcl.git
+# sudo apt-get update  
+# sudo apt-get install linux-libc-dev cmake-gui libusb-1.0-0-dev libusb-dev libudev-dev mpi-default-dev openmpi-bin openmpi-common    
+# sudo apt-get install libflann1.8 libflann-dev libvtk5.10-qt4 libvtk5.10 libqhull* libgtest-dev  freeglut3-dev pkg-config  
+# sudo apt-get install libxmu-dev libxi-dev mono-complete  qt-sdk openjdk-8-jdk openjdk-8-jre
+# cd ~/pcl 
+# mkdir "build"
+# cd "build"
+# cmake -DCMAKE_BUILD_TYPE=Release ..
+# make -j8
+# sudo make -j8 install 
+
 # xscreensaver install
 sudo apt-get install xscreensaver xscreensaver-data-extra xscreensaver-gl-extra
 
