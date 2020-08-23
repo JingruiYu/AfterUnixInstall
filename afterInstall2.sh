@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# # nivida
-# # cuda
+# CUDA9.0+CUDNN1.17
+# https://zhuanlan.zhihu.com/p/103466293
 
 # # eigen install
 cd ~/eigen-3.1.2
@@ -19,7 +19,7 @@ sudo apt-get install libboost-dev libboost-thread-dev libboost-filesystem-dev
 # # doxygen
 # cd ~
 # git clone https://github.com/doxygen/doxygen.git
-cd doxygen
+cd ~/doxygen
 sudo apt-get install flex
 sudo apt-get install bison
 mkdir "build"
@@ -66,15 +66,21 @@ sudo make install
 # pcl
 # git clone https://github.com/PointCloudLibrary/pcl.git
 # sudo apt-get update  
-# sudo apt-get install linux-libc-dev cmake-gui libusb-1.0-0-dev libusb-dev libudev-dev mpi-default-dev openmpi-bin openmpi-common    
-# sudo apt-get install libflann1.8 libflann-dev libvtk5.10-qt4 libvtk5.10 libqhull* libgtest-dev  freeglut3-dev pkg-config  
-# sudo apt-get install libxmu-dev libxi-dev mono-complete  qt-sdk openjdk-8-jdk openjdk-8-jre
+sudo apt-get install linux-libc-dev cmake-gui libusb-1.0-0-dev libusb-dev libudev-dev mpi-default-dev openmpi-bin openmpi-common    
+sudo apt-get install libflann1.8 libflann-dev libvtk5.10-qt4 libvtk5.10 libqhull* libgtest-dev  freeglut3-dev pkg-config  
+sudo apt-get install libxmu-dev libxi-dev mono-complete  qt-sdk openjdk-8-jdk openjdk-8-jre
+sudo apt-get install libpcl-dev
 # cd ~/pcl 
 # mkdir "build"
 # cd "build"
 # cmake -DCMAKE_BUILD_TYPE=Release ..
 # make -j8
 # sudo make -j8 install 
+# sudo apt remove libpcl-dev
+# cd /usr/lib/x86_64-linux-gnu
+# sudo rm libpcl*
+# cd /usr/include
+# sudo rm -r pcl-1.7
 
 # xscreensaver install
 sudo apt-get install xscreensaver xscreensaver-data-extra xscreensaver-gl-extra
@@ -97,6 +103,10 @@ code id_rsa.pub
 ssh -T git@github.com
 #https://blog.csdn.net/Rookie_tong/article/details/82628301
 
+# boot
+sudo vim /etc/default/grub
+#grub_defult = 4
+sudo update-grub
 
 # zsh
 # sudo apt-get install zsh

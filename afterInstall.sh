@@ -25,3 +25,11 @@ wget -qO- https://raw.github.com/ma6174/vim/master/setup.sh | sh -x
 
 # vscode install
 sudo snap install --classic code
+
+prepare 
+~/eigen-3.1.2
+~/doxygen / git clone https://github.com/doxygen/doxygen.git
+~/Pangolin / git clone https://github.com/stevenlovegrove/Pangolin.git
+~/opencv-3.4.6 / git clone https://github.com/opencv/opencv.git
+~/ORB_SLAM2-master / 
+~/lcm-1.3.1

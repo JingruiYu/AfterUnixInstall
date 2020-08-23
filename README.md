@@ -1,4 +1,6 @@
 
+These shell are used for configure the pure Ubuntu OS
+
 # Recommendations for installing the version
 * 64bit would be better than 32bit, if you need MATLAB.
 * I do not know if Ubuntu 18 supports ros, but Ubuntu 14 and 16 do.
@@ -11,8 +13,7 @@ In the BIOS, change the Boot mode to Legecy, instead of UEFI.
 
 \boot | ext4 | 200M
 ----|------|----
-\ | ext4  | 10-15G
-\home | ext4  | max
+\ | ext4  | max
 swap | swap area  | memory size
 
 \boot is the primary partition, while the others is logical partiton.
