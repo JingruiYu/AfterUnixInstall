@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Ubuntu16.04-配置CUDA9.0+CUDNN1.17+Python升级TENSORFLOW
+# https://zhuanlan.zhihu.com/p/103466293
+
+# 用户
+# https://www.linuxidc.com/Linux/2016-06/132218.htm
+
 # update and remove
 sudo apt-get update
 sudo apt-get upgrade

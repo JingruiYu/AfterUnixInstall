@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# CUDA9.0+CUDNN1.17
-# https://zhuanlan.zhihu.com/p/103466293
-
 # # eigen install
 cd ~/eigen-3.1.2
 mkdir "build"
