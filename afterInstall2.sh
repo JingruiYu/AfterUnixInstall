@@ -91,6 +91,9 @@ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31
 sudo apt-get update
 sudo apt-get install ros-kinetic-desktop-full
 
+# Carla
+# https://carla.readthedocs.io/en/latest/build_linux/
+
 # git
 git config --global user.name JingruiYu
 git config --global user.email yujingrui@sjtu.edu.cn
