@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# prepare 
+# ~/eigen-3.1.2
+# ~/doxygen / git clone https://github.com/doxygen/doxygen.git
+# ~/Pangolin / git clone https://github.com/stevenlovegrove/Pangolin.git
+# ~/opencv-3.4.6 / git clone https://github.com/opencv/opencv.git
+# ~/ORB_SLAM2-master / 
+# ~/lcm-1.3.1
+
 # # eigen install
 cd ~/eigen-3.1.2
 mkdir "build"
@@ -22,7 +30,7 @@ sudo apt-get install bison
 mkdir "build"
 cd "build"
 cmake -G "Unix Makefiles" ..
-make -j8
+make -j
 sudo make install
 
 # cd ~
@@ -31,7 +39,7 @@ cd ~/Pangolin
 mkdir "build"
 cd "build"
 cmake ..
-make -j8
+make -j
 sudo make install
 
 # opencv install
@@ -44,8 +52,8 @@ cd ~/opencv-3.4.6
 mkdir "build"
 cd "build"
 cmake -DBUILD_opencv_world=ON -DCMAKE_BUILD_TYPE=RELEASE -DOPENCV_EXTRA_MODULES_PATH=/home/yujr/opencv_contrib/modules -DCMAKE_INSTALL_PREFIX=/usr/local -DWITH_V4L=ON -DWITH_OPENGL=ON -DCUDA_GENERATION=Kepler ..
-make -j8
-sudo make install -j8
+make -j
+sudo make install -j
 sudo /bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf'  
 sudo ldconfig
 
@@ -60,19 +68,26 @@ sudo apt-get install libglib2.0-dev openjdk-8-jdk
 make
 sudo make install
 
+# ROS
+sudo sh -c '. /etc/lsb-release && echo "deb http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ `lsb_release -cs` main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+sudo apt-get update
+sudo apt-get install ros-kinetic-desktop-full
+
 # pcl
-# git clone https://github.com/PointCloudLibrary/pcl.git
 # sudo apt-get update  
 sudo apt-get install linux-libc-dev cmake-gui libusb-1.0-0-dev libusb-dev libudev-dev mpi-default-dev openmpi-bin openmpi-common    
 sudo apt-get install libflann1.8 libflann-dev libvtk5.10-qt4 libvtk5.10 libqhull* libgtest-dev  freeglut3-dev pkg-config  
 sudo apt-get install libxmu-dev libxi-dev mono-complete  qt-sdk openjdk-8-jdk openjdk-8-jre
 sudo apt-get install libpcl-dev
+# # package install
+# git clone https://github.com/PointCloudLibrary/pcl.git
 # cd ~/pcl 
 # mkdir "build"
 # cd "build"
 # cmake -DCMAKE_BUILD_TYPE=Release ..
-# make -j8
-# sudo make -j8 install 
+# make -j
+# sudo make -j install 
 # sudo apt remove libpcl-dev
 # cd /usr/lib/x86_64-linux-gnu
 # sudo rm libpcl*
@@ -85,62 +100,4 @@ sudo apt-get install xscreensaver xscreensaver-data-extra xscreensaver-gl-extra
 # tmux
 sudo apt-get install tmux
 
-# ROS
-sudo sh -c '. /etc/lsb-release && echo "deb http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ `lsb_release -cs` main" > /etc/apt/sources.list.d/ros-latest.list'
-sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-sudo apt-get update
-sudo apt-get install ros-kinetic-desktop-full
 
-# Carla
-# https://carla.readthedocs.io/en/latest/build_linux/
-
-# git
-git config --global user.name JingruiYu
-git config --global user.email yujingrui@sjtu.edu.cn
-ssh-keygen -t rsa -C "yujingrui@sjtu.edu.cn"
-cd .ssh/
-code id_rsa.pub
-ssh -T git@github.com
-#https://blog.csdn.net/Rookie_tong/article/details/82628301
-
-# boot
-sudo vim /etc/default/grub
-#grub_defult = 4
-sudo update-grub
-
-# zsh
-# sudo apt-get install zsh
-# chsh -s /bin/zsh
-# wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh 
-# sh install.sh
-# wget http://mimosa-pudica.net/src/incr-0.2.zsh 
-# https://www.jianshu.com/p/d194d29e488c?open_source=weibo_search
-
-# # smartgit https://jingyan.baidu.com/article/ab0b563096adbbc15bfa7d5d.html
-
-# # Anaconda https://www.anaconda.com/distribution/#download-section
-# # sudo gedit /etc/profile
-# # export PATH=/home/yujr/anaconda3/bin:$PATH
-# # source /etc/profile
-
-# # networkx https://networkx.github.io/documentation/latest/install.html
-# # pip install networkx
-# # pip install --upgrade networkx
-# # pip install numpy scipy pandas matplotlib pygraphviz pydot pyyaml gdal
-# # nosetests networkx -v
-
-# # tensorflow
-# conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
-# conda config --set show_channel_urls yes
-# conda install numpy
-# anaconda search -t conda tensorflow
-# anaconda show anaconda/tensorflow
-# conda install --channel https://conda.anaconda.org/anaconda tensorflow
-# python
-# import tensorflow as tf
-
-# pip install opencv-python
-
-# # pytorch
-# conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
-# conda install h5py imageio imagesize matplotlib numpy scipy tqdm
