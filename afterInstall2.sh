@@ -46,6 +46,12 @@ sudo make install
 # git clone https://github.com/opencv/opencv.git
 # git clone https://github.com/opencv/opencv_contrib.git
 cd ~/opencv_contrib
+# 1.查看所有分支
+# > git branch -a
+# 2.查看当前使用分支(结果列表中前面标*号的表示当前使用分支)
+# > git branch
+# 3.切换分支
+# > git checkout 分支名
 git checkout 3.4.6
 sudo apt-get install build-essential libgtk2.0-dev libvtk5-dev libjpeg-dev libtiff5-dev libjasper-dev libopenexr-dev libtbb-dev
 cd ~/opencv-3.4.6
@@ -56,6 +62,8 @@ make -j
 sudo make install -j
 sudo /bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf'  
 sudo ldconfig
+
+# 当make opencv中报错vtkversionMacros.h no such file时，应安装libvtk6-dev
 
 # ORB_SLAM2
 cd ~/ORB_SLAM2-master
