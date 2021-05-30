@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # prepare 
-# ~/eigen-3.1.2
+# ~/eigen-3.3.7 https://gitlab.com/libeigen/eigen/-/archive/3.3.7/eigen-3.3.7.tar.gz 
 # ~/doxygen / git clone https://github.com/doxygen/doxygen.git
 # ~/Pangolin / git clone https://github.com/stevenlovegrove/Pangolin.git
 # ~/opencv-3.4.6 / git clone https://github.com/opencv/opencv.git
@@ -14,6 +14,16 @@ mkdir "build"
 cd "build"
 cmake ..
 sudo make install
+
+# # ceres install
+sudo apt-get install libgoogle-glog-dev libgflags-dev
+sudo apt-get install libatlas-base-dev
+sudo apt-get install libsuitesparse-dev
+git clone https://ceres-solver.googlesource.com/ceres-solver
+# 1.14.0 is recommond
+# 安装ceres提示“找不到要求版本3.3的Eigen3”解决办法  https://blog.csdn.net/me1171115772/article/details/105114903
+# 编译ceres时：error: ‘integer_sequence’ is not a member of ‘std‘错误- ceres-1.14.X is helpful  https://blog.csdn.net/qq_41586768/article/details/107541917
+
 
 # # Pangolin
 sudo apt-get install libboost-all-dev
