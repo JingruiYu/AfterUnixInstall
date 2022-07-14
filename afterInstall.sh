@@ -1,46 +1,45 @@
 #!/bin/bash
 
-# Ubuntu16.04-配置CUDA9.0+CUDNN1.17+Python升级TENSORFLOW
-# https://zhuanlan.zhihu.com/p/103466293
+# cuda
+## 目前有效的方式是通过 software & update 安装
 
-# 新建用户
-# https://www.linuxidc.com/Linux/2016-06/132218.htm
-# 修改启动顺序
-# sudo vim /etc/default/grub
-# #grub_defult = 4
-# sudo update-grub
-
-# update and remove
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt remove thunderbird totem rhythmbox empathy brasero simple-scan gnome-mahjongg aisleriot gnome-mines transmission-common gnome-orca gnome-sudoku onboard deja-dup bluez 
-sudo apt-get autoremove
-
-# terminal everywhere
-sudo apt-get install nautilus-open-terminal
+# 中文输入法
+## 参考 https://blog.csdn.net/github_39533414/article/details/85211012
 
 # c++11
 sudo apt-get install gcc g++
 
-# time locally
-timedatectl set-local-rtc 1
+# vscode
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt-get install apt-transport-https
+sudo apt-get update
+sudo apt-get install code
 
-# git & cmake install 
-sudo apt install git
-sudo apt install cmake
+# 配置bashrc
+## 1. uncomment force_color_prompt=yes
+## 2. 在bashrc中添加
+# function git-branch-name {
+#   git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3
+# }
 
-# vim install & configure
-sudo apt-get install vim
-wget -qO- https://raw.github.com/ma6174/vim/master/setup.sh | sh -x
+# function git-branch-prompt {
+#   local branch=`git-branch-name`
+#   if [ $branch ]; then printf " [%s]" $branch; fi
+# }
 
-# vscode install
-sudo snap install --classic code
+# PS1="\[\033[01;32m\]\u@\h \[\033[0;36m\]\W\[\033[0m\]\[\033[0;31m\]\$(git-branch-prompt)\[\033[0m\] \$ \n #  "
 
 # 配置git
-git config --global user.name JingruiYu
-git config --global user.email yujingrui@sjtu.edu.cn
-ssh-keygen -t rsa -C "yujingrui@sjtu.edu.cn"
-cd .ssh/
-code id_rsa.pub
-# ssh -T git@github.com
-#https://blog.csdn.net/Rookie_tong/article/details/82628301
+sudo apt install git
+sudo apt install cmake
+git config --global user.name jingruiy
+git config --global user.email jingruiy@nvidia.com
+
+# xscreensaver install
+sudo apt-get install xscreensaver xscreensaver-data-extra xscreensaver-gl-extra
+
+# tmux
+sudo apt-get install tmux
+
