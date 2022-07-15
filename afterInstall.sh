@@ -43,3 +43,9 @@ sudo apt-get install xscreensaver xscreensaver-data-extra xscreensaver-gl-extra
 # tmux
 sudo apt-get install tmux
 
+# slack
+sudo apt-get install alien
+## sudo alien -i  *.rpm
+
+# Anaconda
+## https://www.digitalocean.com/community/tutorials/how-to-install-anaconda-on-ubuntu-18-04-quickstart
