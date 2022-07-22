@@ -3,7 +3,7 @@
 更新软件源，例如选择china的ftp.sjtu.edu.cn
 
 ```
-sh run.sh
+sh update.sh
 ```
 
 # 显卡驱动相关
@@ -120,6 +120,7 @@ sudo apt remove code
 
 ## 中文输入法
 全界面化操作 [参考博客](https://blog.csdn.net/github_39533414/article/details/85211012)
+谷歌拼音 [参考博客](http://8.129.108.223/post/linux-basic/Ubuntu-daily-usage-Chinese-input/)
 
 ## 配置bashrc
 1. 取消 *uncomment force_color_prompt=yes* 的注释
@@ -155,6 +156,11 @@ sudo apt-get install tmux
 ```
 sudo apt-get install alien
 sudo alien -i  *.rpm
+```
+通过slack安装
+
+```
+sudo snap install slack
 ```
 
 ## 安装teams
