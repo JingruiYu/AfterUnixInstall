@@ -26,6 +26,27 @@ sudo apt-get purge linux-image-<版本号>
 sudo update-grub
 ```
 
+## Terminator
+```
+sudo apt-get install terminator
+```
+[美化](https://zhuanlan.zhihu.com/p/144711440)
+
+## ZSH
+```
+sudo apt install curl wget git
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+```
+参考的 *.zshrc* 见文件 *zshrc*
+
+安装插件
+```
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-history-substring-search  ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
+source ~/.zshrc
+```
+
 ## NIVIDA 驱动安装
 目前有效的方式是通过 software & update 安装
 
@@ -39,6 +60,7 @@ wget https://developer.download.nvidia.com/compute/cuda/11.6.0/local_installers/
 
 2. 安装
 > sudo sh cuda_*_linux.run
+
 
 3. 配置环境变量
 ```
@@ -170,3 +192,14 @@ sudo snap install slack
 ## Anaconda
 [参考博客](https://www.digitalocean.com/community/tutorials/how-to-install-anaconda-on-ubuntu-18-04-quickstart)
 
+## ssh key
+```
+ssh-keygen -t ed25519 -C "email@example.com"
+xclip -sel clip < ~/.ssh/id_ed25519.pub
+```
+
+## git config
+```
+git config --global user.name "Your Name"
+git config --global user.email "youremail@yourdomain.com"
+```
