@@ -32,9 +32,33 @@ sudo apt-get install terminator
 ```
 [美化](https://zhuanlan.zhihu.com/p/144711440)
 
+
+## vscode
+1. 阉割版
+```
+sudo snap install --classic code
+```
+卸载
+```
+sudo snap remove code
+```
+2. 完整版
+```
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt-get install apt-transport-https
+sudo apt-get update
+sudo apt-get install code
+```
+卸载
+```
+sudo apt remove code
+```
+
 ## ZSH
 ```
-sudo apt install curl wget git
+sudo install zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 ```
 参考的 *.zshrc* 见文件 *zshrc*
@@ -117,28 +141,6 @@ sudo apt-get install fuse libfuse2
 [下载地址](https://www.nvidia.com/en-us/omniverse/download/
 )
 
-## vscode
-1. 阉割版
-```
-sudo snap install --classic code
-```
-卸载
-```
-sudo snap remove code
-```
-2. 完整版
-```
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-sudo apt-get install apt-transport-https
-sudo apt-get update
-sudo apt-get install code
-```
-卸载
-```
-sudo apt remove code
-```
 
 ## 中文输入法
 全界面化操作 [参考博客](https://blog.csdn.net/github_39533414/article/details/85211012)
@@ -160,9 +162,26 @@ function git-branch-prompt {
 PS1="\[\033[01;32m\]\u@\h \[\033[0;36m\]\W\[\033[0m\]\[\033[0;31m\]\$(git-branch-prompt)\[\033[0m\] \$ \n #  "
 ```
 
-## 配置git
+## Cato VPN
 ```
-sudo apt install git
+wget https://clients.catonetworks.com/linux/5.0.1.1/cato-install-5.0.1.1.sh
+```
+配置命令
+
+
+
+## 配置git
+配置key
+```
+sudo apt install xclip
+ssh-keygen -t ed25519 -C jingruiy@nvidia.com 
+xclip -sel clip < ~/.ssh/id_ed25519.pub 
+
+ssh-keygen -o -t rsa -C "yujingrui@sjtu.edu.cn"
+xclip -sel clip < ~/.ssh/id_rsa.pub 
+```
+
+```
 sudo apt install cmake
 git config --global user.name jingruiy
 git config --global user.email jingruiy@nvidia.com
@@ -191,15 +210,3 @@ sudo snap install slack
 
 ## Anaconda
 [参考博客](https://www.digitalocean.com/community/tutorials/how-to-install-anaconda-on-ubuntu-18-04-quickstart)
-
-## ssh key
-```
-ssh-keygen -t ed25519 -C "email@example.com"
-xclip -sel clip < ~/.ssh/id_ed25519.pub
-```
-
-## git config
-```
-git config --global user.name "Your Name"
-git config --global user.email "youremail@yourdomain.com"
-```

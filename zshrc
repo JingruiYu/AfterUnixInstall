@@ -101,9 +101,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# VPN
-alias vpndm1='cd /home/yujr/cato'
-alias vpndm2='./cclient.sh start'
+# cato VPN
+alias cato='cd /home/jryu/cato ; /cclient.sh start'
+
 
 
 # cuda
