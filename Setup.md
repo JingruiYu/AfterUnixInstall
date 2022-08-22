@@ -210,3 +210,8 @@ sudo snap install slack
 
 ## Anaconda
 [参考博客](https://www.digitalocean.com/community/tutorials/how-to-install-anaconda-on-ubuntu-18-04-quickstart)
+
+## 截图工具
+```
+sudo apt install flameshot
+```
