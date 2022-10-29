@@ -26,8 +26,22 @@ sudo apt-get purge linux-image-<版本号>
 sudo update-grub
 ```
 
-## Terminator
+
+## Anyconnect
+[下载安装包](https://ngvpn.nvidia.com/)，在app文件夹种也有。
 ```
+gunzip anyconnect-linux64-4.10.05095-predeploy-k9.tar.gz
+tar -xvf anyconnect-linux64-4.10.05095-predeploy-k9.tar
+cd anyconnect-linux64-4.10.05095/vpn
+sudo ./vpn_install.sh
+```
+vpn地址的填写参考
+> ngvpn30.vpn.nvidia.com/SAML
+
+
+## 安装tmux Terminator
+```
+sudo apt-get install tmux
 sudo apt-get install terminator
 ```
 [美化](https://zhuanlan.zhihu.com/p/144711440)
@@ -58,7 +72,7 @@ sudo apt remove code
 
 ## ZSH
 ```
-sudo install zsh
+sudo apt install zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 ```
 参考的 *.zshrc* 见文件 *zshrc*
@@ -75,11 +89,6 @@ source ~/.zshrc
 目前有效的方式是通过 software & update 安装
 
 
-## 安装terminator和tmux
-```
-sudo apt install terminator
-sudo apt-get install tmux
-```
 
 
 ## CUDA 安装
@@ -129,18 +138,6 @@ sudo make
 ```
 sudo dpkg -i goog
 ```
-
-## Anyconnect
-[下载安装包](https://ngvpn.nvidia.com/)，在app文件夹种也有。
-```
-gunzip anyconnect-linux64-4.10.05095-predeploy-k9.tar.gz
-tar -xvf anyconnect-linux64-4.10.05095-predeploy-k9.tar
-cd anyconnect-linux64-4.10.05095/vpn
-sudo ./vpn_install.sh
-```
-vpn地址的填写参考
-> ngvpn32.vpn.nvidia.com:8443
-> ngvpn30.vpn.nvidia.com
 
 ## omni
 ```
@@ -221,4 +218,9 @@ sudo snap install slack
 ## 截图工具
 ```
 sudo apt install flameshot
+```
+
+## 壁紙
+```
+sudo apt-get install xscreensaver xscreensaver-data-extra xscreensaver-gl-extra
 ```
