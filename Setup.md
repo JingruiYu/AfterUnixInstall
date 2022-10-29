@@ -29,6 +29,14 @@ sudo update-grub
 ## NIVIDA 驱动安装
 目前有效的方式是通过 software & update 安装
 
+
+## 安装terminator和tmux
+```
+sudo apt install terminator
+sudo apt-get install tmux
+```
+
+
 ## CUDA 安装
 1. 先[下载run文件](https://developer.nvidia.com/cuda-toolkit-archive)
 
@@ -141,14 +149,13 @@ PS1="\[\033[01;32m\]\u@\h \[\033[0;36m\]\W\[\033[0m\]\[\033[0;31m\]\$(git-branch
 ```
 sudo apt install git
 sudo apt install cmake
-git config --global user.name jingruiy
-git config --global user.email jingruiy@nvidia.com
+git config --global user.name *
+git config --global user.email *@*
+ssh-keygen -t rsa -C "*@*"
+ssh-keygen -t ed25519 -C "*@*"
+cat ~/.ssh/*.pub
 ```
 
-## 安装tmux
-```
-sudo apt-get install tmux
-```
 
 ## 安装slack
 [下载安装包](https://slack.com/intl/zh-hk/downloads/linux)
